@@ -1,0 +1,16 @@
+<!-- Spacer nascosto che occupa lo stesso spazio della navbar -->
+<div *ngIf="isNavbarFixed" [style.height.px]="navbarHeight"></div>
+<nav class="navbar" id="nav" #navbar [class.fixed]="isNavbarFixed">
+    <div class="logo">
+        <a href="javascript:void(0)" [routerLink]="'/homepage'">
+            <img [src]="logo" id="logo" loading="eager">
+        </a>
+    </div>
+    <div class="hamburger" (click)="toggleMenu($event)">☰</div>
+    <ul  class="nav-links" [@menuState]="isMobile ? (isOpen ? 'aperto' : 'chiuso') : 'nessunaAnimazione'" >
+        <li *ngFor="let item of voci" >
+            <a appRipple  *ngIf="item.href" [routerLink]="'/homepage'" [fragment]="item.url" (click)="isOpen = false">{{item.nome}}</a>
+            <a appRipple  *ngIf="!item.href" [routerLink]="item.url" (click)="isOpen = false" >{{item.nome}}</a>
+        </li>
+    </ul>
+</nav>
