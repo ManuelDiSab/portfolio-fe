@@ -1,1 +1,39 @@
-<p>progetti works!</p>
+<h1 class="titolone"><i class="fa-solid fa-code"></i> Progetti</h1>
+<div class="progetti-section">
+    @for(item of lavori;track $index){
+    <div class="project-card">
+        <div class="riquadro">
+            <img class="project-img" [src]="item.img" alt="immagine del progetto">
+        </div>
+
+        <div class="project-header">
+            <span class="titolo">{{item.titolo}}</span>
+            <button class="dettagli" (click)="open(content, item.descrizione, item.titolo)">Dettagli </button>
+        </div>
+        <div class="project-body">
+            <p class="descrizione">
+                {{item.descrizione}}
+            </p>
+        </div>
+        <div class="project-footer">
+            <div class="tech-stack">
+                @for(item of tecnologie; track $index){
+                <span class="tech">{{item}}</span>
+                }
+            </div>
+            <div class="btn-container">
+                <button><a [href]="item.github"><i class="fa-brands fa-github"></i>Vedi codice</a></button>
+                <button><a [href]="item.link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></button>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+<ng-template #content let-modal>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    <div class="modal-body" style="padding: 20px;">
+        <h5>{{titolo}}</h5>
+        <p >{{descrizione}}</p>
+    </div>
+</ng-template>

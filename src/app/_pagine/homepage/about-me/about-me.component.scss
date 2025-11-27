@@ -1,0 +1,119 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 50px;
+        flex-direction: column;
+
+        .avatar {
+            display: block;
+            width: 30vh;
+            height: 30vh;
+            border-radius: 50%;
+            box-shadow: rgba(119, 45, 153, 0.56) 0px 0px 40px 4px;
+        }
+
+        .contatti {
+            display: flex;
+            flex-direction: row;
+            color: white;
+            gap: 20px;
+
+            .contatto {
+                display: block;
+                flex: 1 1 0%;
+                min-width: 0;
+                text-align: center;
+                text-decoration: none;
+                color: white;
+                padding: 10px;
+                border: 1px solid var(--bordi);
+                font-size: 30px;
+                background-color: #ffffff0a;
+                border-radius: 8px;
+
+                i {
+                    display: block;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    .secondo-container {
+        .titolo {
+            font-size: 28px;
+            // color: var(--terminale);
+            // color: #AD03DE;
+            color: oklch(0.98 0 0);
+            border-right: 3px solid;
+            font-weight: 700;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .testo {
+            margin-top: 20px;
+            padding: 20px;
+            text-align: justify;
+            font-weight: 300;
+            font-size: 1.125rem;
+            line-height: 1.15;
+            color: var(--testo);
+            outline-color: oklab(83.1% 0 0 / .5);
+        }
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .about {
+        flex-direction: row;
+        width: 80vw;
+        margin: auto;
+        align-items: center;
+        gap: 2rem;
+
+        .container {
+            margin-bottom: 0;
+
+            .contatti {
+                .contatto {
+                    transition: .2s ease;
+                    width: 45px;
+                    height: 45px;
+                    text-align: center;
+                    img{
+                        display: block;
+                    }
+                    &:hover {
+                        transform: translate(-4px) scale(1.04);
+                        box-shadow: 0 0 5px #8630ff8f;
+                    }
+                }
+            }
+        }
+
+        .secondo-container {
+            display: flex;
+            flex-direction: column;
+
+            .titolo {
+                margin: 0;
+                font-size: 36px;
+                height: 38px;
+            }
+
+            .testo {
+                padding: 0;
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { UtilityService } from '../../_servizi/utility.service';
 import { IVoce } from '../../_interfacce/ivoce';
 import { RouterLink } from '@angular/router';
@@ -8,9 +8,29 @@ import { RouterLink } from '@angular/router';
     selector: 'app-menu',
     imports: [CommonModule, RouterLink],
     templateUrl: './menu.component.html',
-    styleUrl: './menu.component.scss'
+    styleUrl: './menu.component.scss',
+      // animations: [
+    //     trigger('menuState', [
+    //         state('chiuso', style({
+    //             height: '0px',
+    //             overflow: 'hidden',
+    //             // display:'none'
+    //         })),
+    //         state('aperto', style({
+    //             height: '*', // altezza naturale
+    //             overflow: 'hidden',
+    //         })),
+    //         transition('chiuso <=> aperto', [
+    //             animate('300ms ease-in-out')
+    //         ]),
+    //         state('nessunaAnimazione', style({
+    //             height: '*',
+    //             overflow: 'visible',
+    //         })),
+    //     ])
+    // ]
 })
-export class MenuComponent {
+export class MenuComponent implements AfterViewInit{
 
     logo: string = "/logo.png"
     voci: IVoce[] =
@@ -35,7 +55,8 @@ export class MenuComponent {
     ngAfterViewInit(): void {
         const observer = new ResizeObserver(x => {
             // const height = this.navbar.nativeElement.offsetHeight
-            const height = x[0].contentRect.height
+            // const height = x[0].contentRect.height
+            const height = this.navbar.nativeElement.offsetHeight
             this.UT.setNavbarHeight(height)
         })
         observer.observe(this.navbar.nativeElement)

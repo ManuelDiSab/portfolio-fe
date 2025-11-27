@@ -1,1 +1,22 @@
-<p>about-me works!</p>
+<section class="about">
+    <!-- Immagine avatar con i mie contatti -->
+    <div class="container">
+        <img [src]="path" alt="Avatar" class="avatar" loading="eager">
+        <div class="contatti">
+            @for(item of contatti;track $index){
+            <a class="contatto" [href]="item.link">
+                <img [src]="item.icona" width="25" height="25" >
+            </a>
+            }
+        </div>
+    </div>
+    <div class="secondo-container">
+        @if(titoli.length !== 0){
+        <h1 appTypeWriter [strings]="titoli" [pausa]="5000" class="titolo"></h1>
+
+        }
+        <p class="testo">
+            {{testo}}
+        </p>
+    </div>
+</section>
