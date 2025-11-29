@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-
     .container {
         display: flex;
         align-items: center;
@@ -29,8 +28,8 @@
 
             .contatto {
                 display: block;
-                flex: 1 1 0%;
-                min-width: 0;
+                width: 45px;
+                height: 45px;
                 text-align: center;
                 text-decoration: none;
                 color: white;
@@ -40,7 +39,7 @@
                 background-color: #ffffff0a;
                 border-radius: 8px;
 
-                i {
+                img {
                     display: block;
                     font-size: 25px;
                 }
@@ -49,8 +48,11 @@
     }
 
     .secondo-container {
+        display: flex;
+        flex-direction: column;
         .titolo {
             font-size: 28px;
+            height: 28px;
             // color: var(--terminale);
             // color: #AD03DE;
             color: oklch(0.98 0 0);
@@ -58,9 +60,13 @@
             font-weight: 700;
             white-space: nowrap;
             width: fit-content;
+            margin: auto;
+            animation: cursor .4s step-end infinite alternate;
+
         }
 
         .testo {
+            width: 100%;
             margin-top: 20px;
             padding: 20px;
             text-align: justify;
@@ -87,12 +93,7 @@
             .contatti {
                 .contatto {
                     transition: .2s ease;
-                    width: 45px;
-                    height: 45px;
-                    text-align: center;
-                    img{
-                        display: block;
-                    }
+
                     &:hover {
                         transform: translate(-4px) scale(1.04);
                         box-shadow: 0 0 5px #8630ff8f;

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal, TemplateRef, WritableSignal } from '@angular/core';
+import { Component, inject, signal, TemplateRef, WritableSignal } from '@angular/core';
 import { ModalDismissReasons, NgbModal, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { IProgetto } from '../../../_interfacce/iprogetto';
 
@@ -13,20 +13,21 @@ export class ProgettiComponent {
     closeResult: WritableSignal<string> = signal('');
     lavori: IProgetto[] = [
         {
-            titolo: 'JSON ↔ CSV', descrizione: "CSV-JSON Converter è un'applicazione web semplice …immediata, pronta per essere copiata o scaricata.",
+            titolo: 'JSON ↔ CSV', descrizione: "CSV-JSON Converter è un'applicazione web in cui caricare e convertire file .json in file .csv e viceversa, con la possibilità di scaricarli",
             id: 1, img: '/demo.png', tech: ['Angular', 'Typescript'], link: 'https://converter-json-csv.netlify.app/', github: 'https://github.com/ManuelDiSab/csv-json-converter'
         },
         {
-            titolo: 'Gotta Catch', descrizione: 'Web app Pokemon con pokedex completo per visualizz…i deve indovinare il pokemon dalla sua silhouette',
+            titolo: 'Gotta Catch', descrizione: 'Web app Pokemon con pokedex completo per visualizzare tutti i pokemon e i loro dettagli. È presente inoltre un minigioco dove bisogno indovinare il nome del pokemon in base alla sua forma. Il sito è stato creato con Angular per fornt-end, un backend Laravel per le Api necessarie al filtraggio e le PokeApi ( Api OpenSource sui pokemon).',
             id: 2, img: '/gotta-catch.png', tech: ['PokeAPi', 'Laravel', 'Angular', 'Typescript'], link: 'https://gottacatch.netlify.app/', github: 'https://github.com/ManuelDiSab/ng-pokemon'
         }]
-    tecnologie: string[] = ['PokeAPi', 'Laravel', 'Angular', 'Typescript']
     descrizione: string = ''
     titolo: string = ''
+    techs:string[] = []
     constructor() { }
-    open(content: TemplateRef<any>, descrizione: string, titolo: string) {
+    open(content: TemplateRef<any>, descrizione: string, titolo: string, tech:string[]) {
         this.descrizione = descrizione
         this.titolo = titolo
+        this.techs = tech
         this.modalService.open(content, {
             ariaLabelledBy: 'modal-basic-title', centered: true, animation: true,
             size: 'lg'

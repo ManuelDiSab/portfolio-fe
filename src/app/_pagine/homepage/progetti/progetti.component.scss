@@ -62,8 +62,10 @@
 
         .project-body {
             padding: 10px;
+            height: calc(3*1.5rem);
 
             .descrizione {
+                line-height: 1.35rem;
                 overflow: hidden;
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
@@ -106,6 +108,22 @@
                     border-radius: 4px;
                     background: rgb(47, 44, 48);
                     border: var(--bordi) 1px solid;
+
+                    @media screen and (min-width:1024px) {
+                        transition: var(--transition);
+
+                        &:hover {
+                            background: rgba(255, 255, 255, 0.08);
+                            border-color: var(--primario);
+                            transform: translateY(-1px);
+
+                            i {
+                                transition: var(--transition);
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+
                     a {
                         color: #f5f5f5;
                         display: flex;

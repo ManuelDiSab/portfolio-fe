@@ -1,15 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, inject, TemplateRef, ViewChild } from '@angular/core';
 import { UtilityService } from '../../_servizi/utility.service';
 import { IVoce } from '../../_interfacce/ivoce';
 import { RouterLink } from '@angular/router';
+import { NgbModule, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-menu',
-    imports: [CommonModule, RouterLink],
+    imports: [CommonModule, RouterLink, NgbModule],
     templateUrl: './menu.component.html',
     styleUrl: './menu.component.scss',
-      // animations: [
+    // animations: [
     //     trigger('menuState', [
     //         state('chiuso', style({
     //             height: '0px',
@@ -30,14 +31,14 @@ import { RouterLink } from '@angular/router';
     //     ])
     // ]
 })
-export class MenuComponent implements AfterViewInit{
-
+export class MenuComponent implements AfterViewInit {
+    private offcanvasService = inject(NgbOffcanvas);
     logo: string = "/logo.png"
     voci: IVoce[] =
-        [{ nome: 'Homepage', url: 'intro', icon: '', href: true },
-        { nome: 'Chi sono', url: 'chi-sono', icon: '', href: true },
-        { nome: 'Strumenti', url: 'competenze', icon: '', href: true },
-        { nome: 'Progetti', url: 'progetti', icon: '', href: true },
+        [{ nome: 'Chi sono', url: 'intro', icon: '', href: true },
+        { nome: 'Progetti', url: 'chi-sono', icon: '', href: true },
+        { nome: 'Skill', url: 'competenze', icon: '', href: true },
+        { nome: 'Formazione', url: 'progetti', icon: '', href: true },
         ]
     showMenu: boolean = false
     isOpen: boolean = false
@@ -45,12 +46,9 @@ export class MenuComponent implements AfterViewInit{
     navbarHeight = 0
     isMobile = window.innerWidth <= 1024;
 
-
-
     @ViewChild('navbar') navbar!: ElementRef
     private navbarOffsetTop = 0
     constructor(private el: ElementRef, private cdr: ChangeDetectorRef, private UT: UtilityService) {
-
     }
     ngAfterViewInit(): void {
         const observer = new ResizeObserver(x => {
@@ -74,5 +72,14 @@ export class MenuComponent implements AfterViewInit{
                 menuElement.style.display = 'none';
             }, 290)
         }
+    }
+    openEnd(content: TemplateRef<any>) {
+        this.offcanvasService.open(content, { position: 'end' , animation:true, });
+    }
+    downloadCV() {
+        const link = document.createElement('a');
+        link.href = '/CV.pdf';
+        link.download = 'CV_Di_Sabatino_Manuel.pdf';
+        link.click();
     }
 }

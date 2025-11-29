@@ -1,0 +1,36 @@
+<h1 class="titolone"><img src="/icon/educazione.svg" alt="icona per la formazione"> Formazione</h1>
+<section class="ed-section">
+    <div class="ed-container">
+        <!-- <span class="timeline-icon"><img src="/icon/clessidra.svg" id="clessidra" alt="clessidra"></span>
+        @if(currentlyLearning.length > 0){
+        <div class="incorso-card">
+            <h3 class="card-title"> Currently learning
+            </h3>
+            @for (item of currentlyLearning; track $index) {
+            <ul class="in-corso">
+                <li><i [class]="item.icona"></i> {{item.titolo}}</li>
+            </ul>
+            }
+        </div>
+        } -->
+        @for (item of arr_formazione; track $index) {
+        <div class="ed-card" (click)="open(content, item.img)">
+            @if(item.img !== null){
+            <div class="quadro">
+                <img [src]="item.img" alt="">
+            </div>
+            }
+            <h5 class="ed-title">{{item.titolo}}</h5>
+            <p class="periodo">{{item.periodo}}</p>
+            <p class="descrizione">{{item.descrizione}}</p>
+        </div>
+        }
+    </div>
+</section>
+<ng-template #content let-modal>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    <div class="modal-body">
+        <img [src]="img_modal" alt="immagine certificato" class="img-modale">
+        <div class="overlay"></div>
+    </div>
+</ng-template>

@@ -1,1 +1,68 @@
-<p>skill works!</p>
+<h1 class="titolone"><img src="/icon/lavori.svg" alt="icona di un computer"> Competenze </h1>
+<section>
+    <div class="skills-container">
+        <div class="header">
+            <h3>Tecnologie frontend</h3>
+        </div>
+        <div class="contenuto">
+            @for (item of arr_frontend; track $index) {
+            <div class="skill-card">
+                <div class="tech">
+                    <img [src]="item.img" alt="" class="tech-img">
+                </div>
+                <span class="nome-tech">{{item.nome}}</span>
+            </div>
+            }
+        </div>
+    </div>
+
+    <div class="skills-container">
+        <div class="header">
+            <h3>Tecnologie Backend</h3>
+        </div>
+        <div class="contenuto">
+            @for (item of arr_backend; track $index) {
+            <div class="skill-card">
+                <div class="tech">
+                    <img [src]="item.img" alt="" class="tech-img">
+                </div>
+                <span class="nome-tech">{{item.nome}}</span>
+            </div>
+            }
+        </div>
+    </div>
+
+    <div class="skills-container">
+        <div class="header">
+            <h3>Trasversali e tool</h3>
+        </div>
+        <div class="contenuto">
+            @for (item of arr_tool; track $index) {
+            <div class="skill-card">
+                <div class="tech">
+                    <img [src]="item.img" alt="" class="tech-img">
+                </div>
+                <span class="nome-tech">{{item.nome}}</span>
+            </div>
+            }
+        </div>
+    </div>
+
+    <div class="skills-container">
+        <div class="header">
+            <h3>Currently learning <img src="/icon/clessidra.svg" alt=""></h3>
+        </div>
+        <div class="contenuto">
+            @for (item of arr_next; track $index) {
+            <div class="skill-card">
+                <div class="tech">
+                    <img [src]="item.img" alt="" class="tech-img">
+                </div>
+                <span class="nome-tech">{{item.nome}}</span>
+            </div>
+            }
+        </div>
+    </div>
+
+
+</section>

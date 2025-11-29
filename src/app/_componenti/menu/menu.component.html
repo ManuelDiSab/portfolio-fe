@@ -6,11 +6,31 @@
             <img [src]="logo" id="logo" loading="eager">
         </a>
     </div>
-    <div class="hamburger" (click)="toggleMenu($event)">☰</div>
-    <ul  class="nav-links" [@menuState]="isMobile ? (isOpen ? 'aperto' : 'chiuso') : 'nessunaAnimazione'" >
-        <li *ngFor="let item of voci" >
-            <a appRipple  *ngIf="item.href" [routerLink]="'/homepage'" [fragment]="item.url" (click)="isOpen = false">{{item.nome}}</a>
-            <a appRipple  *ngIf="!item.href" [routerLink]="item.url" (click)="isOpen = false" >{{item.nome}}</a>
+    <!-- <div class="hamburger" (click)="toggleMenu($event)">☰</div> -->
+    <div class="hamburger" (click)="openEnd(content)">☰</div>
+
+
+    <!-- <ul class="nav-links" [@menuState]="isMobile ? (isOpen ? 'aperto' : 'chiuso') : 'nessunaAnimazione'"> -->
+    <!-- <ul class="nav-links">
+        <li *ngFor="let item of voci">
+            <a appRipple *ngIf="item.href" [routerLink]="[]" [fragment]="item.url"
+                (click)="isOpen = false">{{item.nome}}</a>
+            <a appRipple *ngIf="!item.href" [routerLink]="item.url" (click)="isOpen = false">{{item.nome}}aa</a>
         </li>
+        <button class="curriculum" (click)="downloadCV()">Scarica CV</button>
     </ul>
+ -->
+    <ng-template #content let-offcanvas>
+        <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+        <div class="offcanvas-body">
+            <ul class="nav-links">
+                <li *ngFor="let item of voci">
+                    <a appRipple *ngIf="item.href" [routerLink]="[]" [fragment]="item.url"
+                        (click)="isOpen = false">{{item.nome}}</a>
+                    <a appRipple *ngIf="!item.href" [routerLink]="item.url" (click)="isOpen = false">{{item.nome}}aa</a>
+                </li>
+                <button class="curriculum" (click)="downloadCV()">Scarica CV</button>
+            </ul>
+        </div>
+    </ng-template>
 </nav>

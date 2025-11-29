@@ -1,0 +1,135 @@
+section {
+    margin: auto;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (min-width: 1024px) {
+        width: 80vw;
+        display: grid;
+        // Divide la pagina in 2 macro-colonne simmetriche per i container
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .skills-container {
+        background-color: rgba(20, 20, 25, 0.6); // Sfondo scuro per il contenitore
+        border: 1px solid var(--bordi);
+        border-radius: 8px; // Bordi meno arrotondati per più serietà
+        padding: 0; // Rimuovo il padding per l'effetto "tabella piena" o lo riduciamo
+        overflow: hidden; // Importante per contenere i figli
+        backdrop-filter: blur(10px);
+
+        // Header interno
+        .header {
+            padding: 20px 20px 15px 20px;
+            background: rgba(255, 255, 255, 0.02);
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0; // Posiziono in basso
+                left: 0;
+                width: 100%;
+                height: 1px; // Lo spessore del bordo
+                //Sfumatura come background che fungerò da bordo
+                background: linear-gradient(90deg, var(--primario), transparent);
+            }
+
+            h3 {
+                color: var(--primario);
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: 400;
+                margin: 0;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                img{
+                height: 20px;
+                transform: rotate(30deg);
+                }
+            }
+        }
+
+        .contenuto {
+            display: grid;
+            padding: 20px;
+            gap: 10px; // Spazio piccolo e uniforme tra le mini card
+
+            // SIMMETRIA TOTALE:
+            // Mobile: 2 colonne esatte
+            grid-template-columns: repeat(2, 1fr);
+
+            // Tablet: 3 colonne esatte
+            @media (min-width: 600px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            // Desktop (dentro la mezza pagina): 3 o 4 colonne esatte
+            @media (min-width: 1400px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .skill-card {
+                // Rimuoviamo flex-direction column per fare la "mini card"
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 10px 12px;
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 6px;
+                height: 50px; // Altezza FISSA per simmetria perfetta
+                gap: 12px;
+                transition: all 0.2s ease;
+                cursor: default;
+
+                // Stile dell'icona (piccola e integrata)
+                .tech {
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: transparent; // Nessun box attorno all'icona
+                    border: none;
+
+                    img {
+                        height: 25px;
+                        transition: 0.2s;
+                    }
+                }
+
+                // Testo pulito
+                .nome-tech {
+                    color: #e0e0e0;
+                    font-size: 0.75rem;
+                    font-weight: 200;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis; // Taglia il testo se troppo lungo
+                }
+
+                // Hover discreto sulla card intera
+                &:hover {
+                    background: rgba(255, 255, 255, 0.08);
+                    border-color: var(--primario);
+                    transform: translateY(-1px);
+
+                    .tech i {
+                        transform: scale(1.1);
+                        filter: drop-shadow(0 0 5px var(--primario));
+                    }
+
+                    .nome-tech {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-<h1 class="titolone"><i class="fa-solid fa-code"></i> Progetti</h1>
+<h1 class="titolone"><img src="/icon/programming.svg" alt="icona di program"> Progetti</h1>
 <div class="progetti-section">
     @for(item of lavori;track $index){
     <div class="project-card">
@@ -8,7 +8,8 @@
 
         <div class="project-header">
             <span class="titolo">{{item.titolo}}</span>
-            <button class="dettagli" (click)="open(content, item.descrizione, item.titolo)">Dettagli </button>
+            <button class="dettagli" (click)="open(content, item.descrizione, item.titolo, item.tech)">Dettagli
+            </button>
         </div>
         <div class="project-body">
             <p class="descrizione">
@@ -17,13 +18,16 @@
         </div>
         <div class="project-footer">
             <div class="tech-stack">
-                @for(item of tecnologie; track $index){
+                @for(item of item.tech; track $index){
                 <span class="tech">{{item}}</span>
                 }
             </div>
             <div class="btn-container">
-                <button><a [href]="item.github"><i class="fa-brands fa-github"></i>Vedi codice</a></button>
-                <button><a [href]="item.link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></button>
+                <button><a [href]="item.github" target="_blank"><i class="fa-brands fa-github"></i>Vedi
+                        codice</a></button>
+                <button><a [href]="item.link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        Live
+                        Demo</a></button>
             </div>
         </div>
     </div>
@@ -34,6 +38,12 @@
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     <div class="modal-body" style="padding: 20px;">
         <h5>{{titolo}}</h5>
-        <p >{{descrizione}}</p>
+        <p>{{descrizione}}</p>
+        <h5>Tecnologie utilizzate</h5>
+        <ul>
+            @for (item of techs; track $index) {
+            <li>{{item}}</li>
+            }
+        </ul>
     </div>
 </ng-template>

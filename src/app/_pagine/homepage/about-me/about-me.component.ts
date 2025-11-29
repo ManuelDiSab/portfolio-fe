@@ -10,7 +10,7 @@ import { IContatto } from '../../../_interfacce/icontatto';
 })
 export class AboutMeComponent {
     path: string = '/avatar.png'
-    testo: string = 'Ciao! Sono Manuel,un Full-Stack Developer giovane e super motivato, sempre curioso e pronto a crescere. Sono un ragazzo creativo, affidabile, attento ai dettagli e che non si tira mai indietro davanti a una sfida. Mi piace costruire cose belle, utili e fatte bene. '
+    smile:string = ':=)'
     contatti: IContatto[] = [
         { idContatto: 1, icona: '/icon/github.svg', link: 'https://github.com/MAnuelDiSab' },
         { idContatto: 8, icona: '/icon/linkedin.svg', link: 'https://www.linkedin.com/in/manuel-di-sabatino/' },
