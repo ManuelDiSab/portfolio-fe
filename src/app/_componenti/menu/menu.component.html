@@ -2,7 +2,7 @@
 <div *ngIf="isNavbarFixed" [style.height.px]="navbarHeight"></div>
 <nav class="navbar" id="nav" #navbar [class.fixed]="isNavbarFixed">
     <div class="logo">
-        <a href="javascript:void(0)" [routerLink]="'/homepage'">
+        <a href="javascript:void(0)" [routerLink]="'/'">
             <img [src]="logo" id="logo" loading="eager">
         </a>
     </div>
@@ -11,25 +11,23 @@
 
 
     <!-- <ul class="nav-links" [@menuState]="isMobile ? (isOpen ? 'aperto' : 'chiuso') : 'nessunaAnimazione'"> -->
-    <!-- <ul class="nav-links">
+    <ul class="nav-links">
         <li *ngFor="let item of voci">
             <a appRipple *ngIf="item.href" [routerLink]="[]" [fragment]="item.url"
                 (click)="isOpen = false">{{item.nome}}</a>
-            <a appRipple *ngIf="!item.href" [routerLink]="item.url" (click)="isOpen = false">{{item.nome}}aa</a>
         </li>
         <button class="curriculum" (click)="downloadCV()">Scarica CV</button>
     </ul>
- -->
+
     <ng-template #content let-offcanvas>
         <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
         <div class="offcanvas-body">
             <ul class="nav-links">
                 <li *ngFor="let item of voci">
                     <a appRipple *ngIf="item.href" [routerLink]="[]" [fragment]="item.url"
-                        (click)="isOpen = false">{{item.nome}}</a>
-                    <a appRipple *ngIf="!item.href" [routerLink]="item.url" (click)="isOpen = false">{{item.nome}}aa</a>
+                        (click)="isOpen = false" (click)="offcanvas.dismiss('Cross click')">{{item.nome}}</a>
                 </li>
-                <button class="curriculum" (click)="downloadCV()">Scarica CV</button>
+                <button class="curriculum" (click)="downloadCV(); offcanvas.dismiss()">Scarica CV</button>
             </ul>
         </div>
     </ng-template>

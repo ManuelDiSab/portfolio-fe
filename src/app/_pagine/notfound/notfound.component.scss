@@ -1,0 +1,37 @@
+* {
+    color: #f5f5f5;
+}
+.gif {
+    display: block;
+    margin: auto;
+}
+
+h2,
+p {
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.btn-container {
+    display: flex;
+
+    .btn {
+        margin: 5vh auto;
+        border: 1px solid var(--primario);
+        padding: 2vh 2vw;
+        border-radius: 2rem;
+        transition: var(--transition);
+        background-color: #d641ff1b;
+        &:hover {
+            opacity: .7;
+        }
+
+    }
+}
