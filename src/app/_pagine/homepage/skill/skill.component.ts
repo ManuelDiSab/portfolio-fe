@@ -34,9 +34,8 @@ export class SkillComponent {
     ]
 
     arr_next: ICompetenza[] = [
-        { nome: 'React', img: '/icon/react.svg' },
-        { nome: 'Redux', img: '/icon/redux.svg' },
-        { nome: 'Next.js', img: '/icon/next.svg' },
+        { nome: 'Java', img: '/icon/java.svg' },
+        { nome: 'Spring', img: '/icon/spring.svg' },
     ]
     soft_skill: string[] = ['Conoscenza della lingua inglese', 'Problem solveing', 'attenzione ai dettagli']
 }
