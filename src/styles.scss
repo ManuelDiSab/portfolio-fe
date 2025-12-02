@@ -3,67 +3,6 @@
 /* Importing Bootstrap SCSS file. */
 @use 'bootstrap/scss/bootstrap';
 
-:root {
-    --bordi: #2d3938;
-    --testo: oklch(87.2% .01 258.338);
-    --background: #ffffff05;
-    --bg-chiaro: #E9ECEF;
-    --primario: #d641ff;
-    --transition: .2s ease;
-}
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
-img {
-    pointer-events: none;
-}
-
-.modal-content {
-    padding: 0 !important;
-    position: relative;
-    background-color: #1A1A1A;
-
-    .btn-close {
-        position: absolute;
-        z-index: 10;
-        right: 10px;
-        top: 10px;
-        height: 20px;
-        width: 20px;
-        border-radius: 50%;
-        font-size: 16px;
-        font-weight: 700;
-        color: #f5f5f5 !important;
-        background-color: #9e9e9e;
-        opacity: .6;
-        outline: none;
-    }
-
-    .modal-body {
-        padding: 0;
-        color: #c7c7c7;
-    }
-}
-
-.offcanvas {
-    
-    background-color: #1f1f1f !important;
-    width: 70vw !important;
-    @media screen and (min-width:768px) {
-        width: 300px !important;
-    }
-    .btn-close{
-        background-color: #c7c7c7 !important;
-        align-self: self-end;
-        margin: 20px;
-        
-    }   
-}   
-
 * {
     margin: 0;
     padding: 0;
@@ -71,32 +10,126 @@ img {
     font-family: 'Inter', sans-serif;
 }
 
-body {
-    background-color: #161414;
+:root {
+    --body-bg: #161414;
+    --bordi: #2d3938;
+    --testo: oklch(87.2% .01 258.338);
+    --titoli: #fff;
+    --background: #ffffff05;
+    --primario: #d641ff;
+    --skill: rgb(179, 179, 179);
+    --transition: .2s ease;
+    --box-shadow: 0 0 5px #8630ff8f;
+    --bg-box: rgba(20, 20, 25, 0.6);
+    --bg-nav: hsla(180, 2%, 8%, 0.8);
 }
 
-.titolone {
-    margin: auto;
-    padding: 70px 20px 20px 20px;
-    width: 90vw;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: white;
-    font-size: 2.5rem;
+.light {
+    --body-bg: #f5f5f5;
+    --bordi: #2d3938;
+    --testo: #333;
+    --titoli: #000;
+    --background: #ffffff05;
+    --primario: #d641ff;
+    --skill: rgb(255, 221, 255);
+    --transition: .2s ease;
+    --box-shadow: 0 0 5px #8630ff8f;
+    --bg-box: rgba(20, 20, 25, 0.6);
+    --bg-nav: hsla(180, 2%, 8%, 0.8);
+}
+
+body {
+    background-color: var(--body-bg);
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+
+    header {
+        margin-bottom: 3vw;
+    }
+
+    main {
+        padding-top: 50px;
+        background-color: var(--body-bg);
+        min-height: 100vh;
+        padding-bottom: 50px;
+    }
 
     img {
-        height: 40px;
-        width: 40px;
+        pointer-events: none;
     }
 
-    @media (min-width:1024px) {
-        text-align: justify;
-        width: 80vw;
+    .titolone {
+        margin: auto;
+        padding: 70px 20px 20px 20px;
+        width: 90vw;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: var(--titoli);
+        font-size: 2.5rem;
+
+        img {
+            height: 40px;
+            width: 40px;
+        }
+
+        @media (min-width:1024px) {
+            text-align: justify;
+            width: 80vw;
+        }
     }
+
+    .modal-content {
+        padding: 0 !important;
+        position: relative;
+        background-color: #1A1A1A;
+
+        .btn-close {
+            position: absolute;
+            z-index: 10;
+            right: 10px;
+            top: 10px;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            font-size: 16px;
+            font-weight: 700;
+            color: #f5f5f5 !important;
+            background-color: #9e9e9e;
+            opacity: .6;
+            outline: none;
+        }
+
+        .modal-body {
+            padding: 0;
+            color: #c7c7c7;
+        }
+    }
+
+    .offcanvas {
+
+        background-color: #1f1f1f !important;
+        width: 70vw !important;
+
+        @media screen and (min-width:768px) {
+            width: 300px !important;
+        }
+
+        .btn-close {
+            background-color: #c7c7c7 !important;
+            align-self: self-end;
+            margin: 20px;
+
+        }
+    }
+
+
 }
-
 
 /* Cursore lampeggiante*/
 @keyframes cursor {

@@ -14,7 +14,7 @@ section {
     }
 
     .skills-container {
-        background-color: rgba(20, 20, 25, 0.6); // Sfondo scuro per il contenitore
+        background-color: var(--bg-box); // Sfondo scuro per il contenitore
         border: 1px solid var(--bordi);
         border-radius: 8px; // Bordi meno arrotondati per più serietà
         padding: 0; // Rimuovo il padding per l'effetto "tabella piena" o lo riduciamo
@@ -24,7 +24,7 @@ section {
         // Header interno
         .header {
             padding: 20px 20px 15px 20px;
-            background: rgba(255, 255, 255, 0.02);
+            background: var(--background);
             position: relative;
 
             &::after {
@@ -106,7 +106,7 @@ section {
 
                 // Testo pulito
                 .nome-tech {
-                    color: #e0e0e0;
+                    color: var(--testo);
                     font-size: 0.75rem;
                     font-weight: 200;
                     white-space: nowrap;
