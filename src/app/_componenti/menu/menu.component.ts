@@ -78,7 +78,7 @@ export class MenuComponent implements AfterViewInit {
     }
     downloadCV() {
         const link = document.createElement('a');
-        link.href = '/CV.pdf';
+        link.href = '/CV_Aggiornato.pdf';
         link.download = 'CV_Di_Sabatino_Manuel.pdf';
         link.click();
     }
