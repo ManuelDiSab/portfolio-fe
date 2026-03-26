@@ -25,9 +25,11 @@
             <div class="btn-container">
                 <button><a [href]="item.github" target="_blank"><i class="fa-brands fa-github"></i>Vedi
                         codice</a></button>
-                <button><a [href]="item.link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                @if (item.link != '') {
+                    <button ><a [href]="item.link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>
                         Live
                         Demo</a></button>
+                }
             </div>
         </div>
     </div>

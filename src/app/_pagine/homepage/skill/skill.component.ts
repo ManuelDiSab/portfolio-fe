@@ -23,6 +23,7 @@ export class SkillComponent {
     { nome: 'REST API', img: '/icon/api.svg' },
     { nome: 'SQL', img: '/icon/sql.svg' },
     { nome: 'Java', img: '/icon/java.svg' },
+    { nome: 'Spring', img: '/icon/spring.svg' },
   ];
 
   arr_tool: ICompetenza[] = [
@@ -31,11 +32,11 @@ export class SkillComponent {
     { nome: 'VS Code', img: '/icon/vs.svg' },
     { nome: 'Postman', img: '/icon/postman.svg' },
     { nome: 'MySql', img: '/icon/mysql.svg' },
+    { nome: 'Maven', img: '/icon/maven.svg' },
+
   ];
 
   arr_next: ICompetenza[] = [
-    { nome: 'Spring', img: '/icon/spring.svg' },
-    { nome: 'Maven', img: '/icon/maven.svg' },
     { nome: 'Docker', img: '/icon/docker.svg' },
   ];
   soft_skill: string[] = [
