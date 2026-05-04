@@ -74,11 +74,11 @@ export class MenuComponent implements AfterViewInit {
         }
     }
     openEnd(content: TemplateRef<any>) {
-        this.offcanvasService.open(content, { position: 'end' , animation:true, });
+        this.offcanvasService.open(content, { position: 'end', animation: true, });
     }
     downloadCV() {
         const link = document.createElement('a');
-        link.href = '/CV_Aggiornato.pdf';
+        link.href = '/CV_Di_Sabatino_Manuel.pdf';
         link.download = 'CV_Di_Sabatino_Manuel.pdf';
         link.click();
     }
