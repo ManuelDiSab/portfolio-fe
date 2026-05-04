@@ -36,9 +36,9 @@ export class MenuComponent implements AfterViewInit {
     logo: string = "/logo.png"
     voci: IVoce[] =
         [{ nome: 'Chi sono', url: 'intro', icon: '', href: true },
-        { nome: 'Progetti', url: 'chi-sono', icon: '', href: true },
+        { nome: 'Progetti', url: 'progetti', icon: '', href: true },
         { nome: 'Skill', url: 'competenze', icon: '', href: true },
-        { nome: 'Formazione', url: 'progetti', icon: '', href: true },
+        { nome: 'Formazione', url: 'formazione', icon: '', href: true },
         ]
     showMenu: boolean = false
     isOpen: boolean = false

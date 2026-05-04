@@ -109,7 +109,7 @@
                 button {
                     padding: 8px 10px;
                     border-radius: 4px;
-                    background: rgb(47, 44, 48);
+                    background: var(--bg-nav);
                     border: var(--bordi) 1px solid;
 
                     @media screen and (min-width:1024px) {

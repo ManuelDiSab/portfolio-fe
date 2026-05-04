@@ -20,9 +20,4 @@ export class AppComponent implements OnInit {
             this.cd.detectChanges()
         })
     }
-    @HostListener('document:contextmenu', ['$event'])
-    onRightClick(e:MouseEvent){
-        e.preventDefault()
-    }
-
 }

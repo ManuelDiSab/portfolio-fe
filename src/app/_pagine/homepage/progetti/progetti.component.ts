@@ -18,22 +18,22 @@ export class ProgettiComponent {
         },
         {
             titolo: 'Gotta Catch', descrizione: 'Web app Pokemon con pokedex completo per visualizzare tutti i pokemon e i loro dettagli. È presente inoltre un minigioco dove bisogno indovinare il nome del pokemon in base alla sua forma. Il sito è stato creato con Angular per fornt-end, un backend Laravel per le Api necessarie al filtraggio e le PokeApi ( Api OpenSource sui pokemon).',
-            id: 2, img: '/gotta-catch.png', tech: ['PokeAPi', 'Laravel', 'Angular', 'Typescript'], link: 'https://gottacatch.netlify.app/', github: 'https://github.com/ManuelDiSab/ng-pokemon'
+            id: 2, img: '/GottaCatch.jpg', tech: ['PokeAPi', 'Laravel', 'Angular', 'Typescript'], link: 'https://gottacatch.netlify.app/', github: 'https://github.com/ManuelDiSab/ng-pokemon'
         },
         {
             titolo: 'Demo di gestionale libreria', descrizione: "Web Application basata sull'architettura MVC per la digitalizzazione dei processi di una libreria (prestiti, catalogo, utenti) e gestione della persistenza dei dati su database.",
-            id: 2, img: '/library_managment.jpg', tech: ['Java', 'Spring', 'Maven', 'JPA', 'Thymeleaf'], link: '', github: 'https://github.com/ManuelDiSab/Demo_MVC_gestione_libreria_spring.git'
+            id: 3, img: '/library_managment.jpg', tech: ['Java', 'Spring', 'Maven', 'JPA', 'Thymeleaf'], link: '', github: 'https://github.com/ManuelDiSab/Demo_MVC_gestione_libreria_spring.git'
         },
         {
             titolo: 'Demo di gestionale palestra ', descrizione: 'Backend gestionale palestra sviluppato in Java con architettura RESTful protetta da Spring Security per la gestione di accessi e abbonamenti tramite database relazionale e Spring Data JPA.',
-            id: 2, img: '/Api.jpg', tech: ['Spring', 'Spring Security', 'Maven', 'JPA'], link: '', github: 'https://github.com/ManuelDiSab/GymManagement.git'
+            id: 4, img: '/Api.jpg', tech: ['Spring', 'Spring Security', 'Maven', 'JPA'], link: '', github: 'https://github.com/ManuelDiSab/GymManagement.git'
         }
     ]
     descrizione: string = ''
     titolo: string = ''
-    techs:string[] = []
+    techs: string[] = []
     constructor() { }
-    open(content: TemplateRef<any>, descrizione: string, titolo: string, tech:string[]) {
+    open(content: TemplateRef<any>, descrizione: string, titolo: string, tech: string[]) {
         this.descrizione = descrizione
         this.titolo = titolo
         this.techs = tech
