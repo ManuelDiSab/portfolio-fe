@@ -34,7 +34,7 @@ export class LoginComponent {
           console.log('Login effettuato!', res);
           // IT: Se il login ha successo, vado alla pagina principale (o a una dashboard)
           // EN: If the login is successful, I go to the main page (or to a dashboard)
-          this.router.navigate(['/']);
+          this.router.navigate(['/dashboard']);
         },
         error: (err) => {
           console.error('Errore di login', err);
