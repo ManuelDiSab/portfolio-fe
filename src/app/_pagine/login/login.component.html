@@ -1,0 +1,25 @@
+<div class="login-container">
+    <h2>Accesso Admin</h2>
+
+    <!-- IT: Mostro l'errore se presente -->
+    <!-- EN: I show the error if present -->
+    @if(errorMessage) {
+    <p class="error">{{ errorMessage }}</p>
+    }
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="username">Username</label>
+            <input id="username" type="text" formControlName="username">
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" formControlName="password">
+        </div>
+
+        <!-- IT: Il tasto si disabilita da solo se i campi sono vuoti! -->
+        <!-- EN: The button disables itself if the fields are empty! -->
+        <button type="submit" [disabled]="loginForm.invalid">Accedi</button>
+    </form>
+</div>

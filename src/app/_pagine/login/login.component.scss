@@ -1,0 +1,106 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 20px;
+
+    h2 {
+        color: var(--titoli);
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .error {
+        color: #ff4d6d;
+        background-color: rgba(255, 77, 109, 0.1);
+        border: 1px solid rgba(255, 77, 109, 0.3);
+        border-radius: 8px;
+        padding: 10px 20px;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        width: 100%;
+        max-width: 400px;
+        background-color: var(--bg-box);
+        border: 1px solid var(--bordi);
+        border-radius: 12px;
+        padding: 2rem;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            label {
+                color: var(--testo);
+                font-size: 0.9rem;
+                font-weight: 400;
+            }
+
+            input {
+                background-color: var(--background);
+                border: 1px solid var(--bordi);
+                border-radius: 8px;
+                color: var(--titoli);
+                font-size: 1rem;
+                padding: 10px 14px;
+                outline: none;
+                transition: var(--transition);
+
+                &::placeholder {
+                    color: var(--skill);
+                    opacity: 0.5;
+                }
+
+                &:focus {
+                    border-color: var(--primario);
+                    box-shadow: var(--box-shadow);
+                }
+
+                &:-webkit-autofill {
+                    -webkit-box-shadow: 0 0 0px 1000px #1a1a1f inset;
+                    -webkit-text-fill-color: var(--titoli);
+                }
+            }
+        }
+
+        button[type="submit"] {
+            margin-top: 0.5rem;
+            padding: 11px;
+            border-radius: 8px;
+            border: 1px solid var(--primario);
+            background: transparent;
+            color: var(--primario);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+
+            &:hover:not(:disabled) {
+                background-color: var(--primario);
+                color: #fff;
+                box-shadow: var(--box-shadow);
+                transform: translateY(-1px);
+            }
+
+            &:disabled {
+                opacity: 0.35;
+                cursor: not-allowed;
+                border-color: var(--bordi);
+                color: var(--testo);
+            }
+        }
+    }
+}
